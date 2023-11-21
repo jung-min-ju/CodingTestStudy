@@ -4,6 +4,7 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); //soutv랑 별 차이 없는거 같은뎅
         HashMap<Character, Integer> quackIndex = new HashMap<>();
 
         char[] input = br.readLine().toCharArray();
@@ -21,14 +22,16 @@ public class Main {
 
         if(input.length%5!=0) { //문자열의 길이가 5의 배수가 아닌경우, 프로그램 종료
             leastQuack = -1;
-            System.out.println(leastQuack);
+            bw.write(Integer.toString(leastQuack));
+            bw.flush();
+            bw.close();
             br.close();
             return;
         }
 
         for(char quack : input){
             int index = 0;
-            if(!quackIndex.containsKey(quack)){
+            if(!quackIndex.containsKey(quack)){ //들어온 문자열이 q,a,u,c,k 중 하나인지 검증.
                 leastQuack=-1;
                 break;
             }
@@ -45,7 +48,7 @@ public class Main {
                     }
                     minus=checkQuack[1]-checkQuack[5]; //minjus=q-k
                 }
-                if(checkQuack[1]-checkQuack[5]>minus){ //k가 들어왓는데, q-k가 기존 minus보다 크다면 새로운 오리가 등장한 것!
+                if(checkQuack[1]-checkQuack[5]>minus) { //k가 들어왓는데, q-k가 기존 minus보다 크다면 새로운 오리가 등장한 것!
                     minus=checkQuack[1]-checkQuack[5];
                 }
                 if(checkQuack[1]==checkQuack[5] && leastQuack==0){ //q=k && 최소 오리수 안 세어진 경우
@@ -59,6 +62,9 @@ public class Main {
         else {
             leastQuack+=minus;
         }
-        System.out.println(leastQuack);
+        bw.write(Integer.toString(leastQuack));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
