@@ -4,7 +4,6 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); //soutv랑 별 차이 없는거 같은뎅
         HashMap<Character, Integer> quackIndex = new HashMap<>();
 
         char[] input = br.readLine().toCharArray();
@@ -22,9 +21,7 @@ public class Main {
 
         if(input.length%5!=0) { //문자열의 길이가 5의 배수가 아닌경우, 프로그램 종료
             leastQuack = -1;
-            bw.write(Integer.toString(leastQuack));
-            bw.flush();
-            bw.close();
+            System.out.println(leastQuack);
             br.close();
             return;
         }
@@ -62,9 +59,7 @@ public class Main {
         else {
             leastQuack+=minus;
         }
-        bw.write(Integer.toString(leastQuack));
-        bw.flush();
-        bw.close();
+        System.out.println(leastQuack);
         br.close();
     }
 }
