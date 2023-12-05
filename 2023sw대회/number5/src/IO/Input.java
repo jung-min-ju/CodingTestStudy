@@ -1,9 +1,13 @@
+package IO;
+
+import Repository.Graph;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-class Input {
+public class Input {
     static BufferedReader br;
     static StringTokenizer st;
     public static Graph readGraph() throws IOException {
@@ -26,6 +30,7 @@ class Input {
     }
 
     public static int[] readPath() throws IOException {
+        Output.printPath();
         br = new BufferedReader(new InputStreamReader(System.in));
         st = new StringTokenizer(br.readLine());
 

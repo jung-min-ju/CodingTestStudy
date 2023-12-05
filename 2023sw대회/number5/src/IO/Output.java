@@ -1,3 +1,7 @@
+package IO;
+
+import java.io.IOException;
+
 public class Output {
     public static void printPath(){
         System.out.print("출발점, 목적지, 경유지의 수 : ");

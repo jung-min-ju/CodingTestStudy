@@ -1,3 +1,6 @@
+package Service;
+
+import Repository.Graph;
 
 public class Dfs {
     private static Graph graph;
