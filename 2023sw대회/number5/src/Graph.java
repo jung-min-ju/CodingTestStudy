@@ -1,5 +1,3 @@
-package Repository;
-
 import java.util.*;
 
 public class Graph { //그래프를 저장해줄 repository
